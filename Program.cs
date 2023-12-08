@@ -29,13 +29,41 @@ public class Seminar04 {
             
         }
         Console.WriteLine("Завершение прграммы!");
-                
-    
+    }            
+    static void Zadanie02(){
+        Console.WriteLine("Алгоритм заполняет массив слуяайными числами \nи выводит количество чётных чисел в массиве.");
+        
+        Console.Write("Введите количество элементов массива: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] Array = new int[n];
+        Random R = new Random();
 
+        for (int i = 0; i < n; i++){
+            Array[i] = R.Next(100,1000);
+        }
+        int k=0;
+        Console.Write("Пулученный массив: [");
+        for (int i = 0; i < n-1; i++) {
+            Console.Write(Array[i]+", ");
+            if (Array[i]%2==0) k++;
+        }
+        Console.WriteLine(Array[n-1]+"]");
+        Console.WriteLine($"В массиве {k} чётных чисел.");
+        
     }
+
+
+    
     static void Main(){
         Console.Clear();
-        Zadanie01();
-        Zadanie02();
+        // Zadanie01();
+        // Console.Write("Нажмите любую клавишу, чтобы перейти ко второму заданию...");
+        // Console.ReadLine();
+        // Console.Clear();
+        // Zadanie02();
+        // Console.Write("Нажмите любую клавишу, чтобы перейти ко второму заданию...");
+        // Console.ReadLine();
+        // Console.Clear();
+        
     }
 }
