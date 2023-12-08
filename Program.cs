@@ -52,7 +52,35 @@ public class Seminar04 {
         
     }
 
+    static void Zadanie03(){
+        Console.WriteLine("Программа переворачивает одномерный массив");
+        
+        Console.Write("Введите количество элементов массива: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] Array = new int[n];
+        Random R = new Random();
 
+        for (int i = 0; i < n; i++){
+            Array[i] = R.Next(100,1000);
+        }
+        int k=0;
+        Console.Write("Полученный массив: [");
+        for (int i = 0; i < n-1; i++) { //Можно использовать foreach (int i in Array) Console.Write(Array[i]+", ");
+            Console.Write(Array[i]+", ");
+        }
+        Console.WriteLine(Array[n-1]+"]");
+        int x;
+        for (int i = 0; i <n/2; i++){
+            x = Array[i];
+            Array[i] = Array[n-1-i];
+            Array[n-i-1] = x;
+        }
+        Console.Write("Перевернутый массив: [");
+        for (int i = 0; i < n-1; i++) { //Можно использовать foreach (int i in Array) Console.Write(Array[i]+", ");
+            Console.Write(Array[i]+", ");
+        }
+        Console.WriteLine(Array[n-1]+"]");
+    }
     
     static void Main(){
         Console.Clear();
@@ -64,6 +92,7 @@ public class Seminar04 {
         // Console.Write("Нажмите любую клавишу, чтобы перейти ко второму заданию...");
         // Console.ReadLine();
         // Console.Clear();
-        
+        Zadanie03();
+
     }
 }
